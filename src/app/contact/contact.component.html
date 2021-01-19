@@ -1,0 +1,27 @@
+<div class="container">
+
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <h2>Contact Us</h2>
+  <div class="form-field">
+    <label for="email">
+      Email
+    </label>
+    <input formControlName="email" type="email">
+    <span *ngIf="contactForm.controls.email.errors?.required && contactForm.controls.email.touched">
+      Email is required
+    </span>
+  </div>
+
+  <div class="form-field">
+    <label for="message">
+      Message
+    </label>
+    <textarea formControlName="message" type="message" placeholder="Write your message here"  cols="95" rows="3"></textarea>
+    <span *ngIf="contactForm.controls.message.errors?.required && contactForm.controls.message.touched">
+      Please write a message
+    </span>
+  </div>
+
+  <button type="submit" [disabled]="!contactForm.valid" class="btn btn-warning">Send</button>
+</form>
+</div>

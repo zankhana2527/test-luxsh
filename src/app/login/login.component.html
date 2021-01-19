@@ -1,0 +1,41 @@
+<div class="container">
+
+<h1>Welcome!</h1>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-field">
+    <label for="username">
+      Username
+    </label>
+    <input formControlName="username" type="text">
+    <span *ngIf="loginForm.controls.username.errors?.required && loginForm.controls.username.touched">
+      Username is required
+    </span>
+  </div>
+
+
+  <div class="form-field">
+    <label for="password">
+      Password
+    </label>
+    <input formControlName="password" type="password">
+    <span *ngIf="loginForm.controls.password.errors?.required && loginForm.controls.password.touched">
+      password is required
+    </span>
+  </div>
+
+
+  <div class="form-field">
+    <label for="role">
+      Role
+    </label>
+    <select name="role" id="role" formControlName="role">
+      <option value="admin">Admin</option>
+      <option value="user">User</option>
+    </select>
+  </div>
+
+  <button type="submit" [disabled]="!loginForm.valid" class="btn btn-warning">Login</button>
+</form>
+</div>

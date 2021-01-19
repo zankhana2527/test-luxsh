@@ -1,0 +1,16 @@
+h1 {
+  max-width: 70%;
+  text-align: justify;
+  margin: 80px auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+  line-height: 2rem;
+  font-size: 25px;
+}
+h1::first-letter {
+  font-size: 1.5em;
+}
+h1::selection {
+  background-color: #e0a800;
+  color: black;
+}
